@@ -1,19 +1,17 @@
-class Solution(object):
-    def twoSum(self, nums, target):
-        """
-        :type nums: List[int]
-        :type target: int
-        :rtype: List[int]
-        """
-        num_dict = {}  # Dictionary to store previously seen numbers
+def twoSum(self, nums, target):
+    """
+    :type nums: List[int]
+    :type target: int
+    :rtype: List[int]
+    """
+    num_dict = {}  # Dictionary to store previously seen numbers
+    
+    for i, num in enumerate(nums):
+        complement = target - num
         
-        for i, num in enumerate(nums):
-            complement = target - num
-            
-            if complement in num_dict:
-                return [num_dict[complement], i]
-            
-            num_dict[num] = i
+        if complement in num_dict:
+            return [num_dict[complement], i]
         
-        return []  # No pair found
- 
+        num_dict[num] = i
+    
+    return []  # No pair found
